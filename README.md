@@ -1,24 +1,57 @@
-# README
+# Patient Management System
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Ruby on Rails application for managing patient records and appointments.
 
-Things you may want to cover:
+## Prerequisites
 
-* Ruby version
+- Ruby 3.2.2
+- Rails 7.1.0
+- SQLite3
 
-* System dependencies
+## Setup
 
-* Configuration
+1. Clone the repository
+2. Install dependencies:
+```bash
+bundle install
+```
 
-* Database creation
+3. Set up the database:
+```bash
+rails db:create
+rails db:migrate
+```
 
-* Database initialization
+4. (Optional) Seed the database with sample data:
+```bash
+rails db:seed
+```
 
-* How to run the test suite
+5. Run the test suite:
+```bash
+rspec
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+6. Start the server:
+```bash
+rails server
+```
 
-* Deployment instructions
+The application will be available at `http://localhost:3000`
 
-* ...
+## Features
+
+- View all patients with pagination (10 patients per page)
+- Search patients by name or email
+- View patients with upcoming appointments (within 72 hours)
+- Create new patients
+- Edit existing patient information
+- Email uniqueness validation
+- Comprehensive test coverage
+
+## Technical Details
+
+- Uses Kaminari for pagination
+- Uses validates_email_format_of for email validation
+- Includes RSpec tests with FactoryBot and Faker
+- Simple and clean UI focusing on functionality
