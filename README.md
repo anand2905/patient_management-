@@ -5,8 +5,8 @@ A Ruby on Rails application for managing patient records and appointments.
 ## Prerequisites
 
 - Ruby 3.2.2
-- Rails 7.1.0
-- SQLite3
+- Rails 8.0.1
+- Postgres
 
 ## Setup
 
