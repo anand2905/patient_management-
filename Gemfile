@@ -37,7 +37,7 @@ gem "bootsnap", require: false
 gem "bootstrap", "~> 5.3.2"
 gem "sassc-rails"
 
-gem "kaminari"  
+gem "kaminari"
 gem "validates_email_format_of"
 gem "pry"
 gem "devise"
@@ -60,4 +60,3 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 end
-
