@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <%= link_to "Patient Management", root_path, class: "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "All Patients", patients_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Upcoming Appointments", upcoming_patients_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "New Patient", new_patient_path, class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
+      
+      <ul class="navbar-nav">
+        <% if user_signed_in? %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              <%= current_user.full_name %>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end">
+              <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
+              <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item text-danger" %>
+            </div>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Sign In", new_user_session_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
+

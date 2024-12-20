@@ -37,8 +37,10 @@ gem "bootsnap", require: false
 gem "bootstrap", "~> 5.3.2"
 gem "sassc-rails"
 
-gem "kaminari"  # For pagination
-gem "validates_email_format_of"  # For email validation
+gem "kaminari"  
+gem "validates_email_format_of"
+gem "pry"
+gem "devise"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

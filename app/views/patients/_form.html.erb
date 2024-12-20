@@ -1,0 +1,66 @@
+<div class="card">
+  <div class="card-body">
+    <%= form_with(model: @patient, local: true, class: "needs-validation") do |form| %>
+      <% if @patient.errors.any? %>
+        <div class="alert alert-danger">
+          <h4 class="alert-heading"><%= pluralize(@patient.errors.count, "error") %> prohibited this patient from being saved:</h4>
+          <ul class="mb-0">
+            <% @patient.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :first_name, class: "form-label" %>
+            <%= form.text_field :first_name, class: "form-control #{'is-invalid' if @patient.errors[:first_name].any?}" %>
+            <% if @patient.errors[:first_name].any? %>
+              <div class="invalid-feedback">
+                <%= @patient.errors[:first_name].join(", ") %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :last_name, class: "form-label" %>
+            <%= form.text_field :last_name, class: "form-control #{'is-invalid' if @patient.errors[:last_name].any?}" %>
+            <% if @patient.errors[:last_name].any? %>
+              <div class="invalid-feedback">
+                <%= @patient.errors[:last_name].join(", ") %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :email, class: "form-label" %>
+            <%= form.email_field :email, class: "form-control #{'is-invalid' if @patient.errors[:email].any?}" %>
+            <% if @patient.errors[:email].any? %>
+              <div class="invalid-feedback">
+                <%= @patient.errors[:email].join(", ") %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :next_appointment_date, class: "form-label" %>
+            <%= form.datetime_local_field :next_appointment_date, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <%= form.submit class: "btn btn-primary" %>
+        <%= link_to "Cancel", patients_path, class: "btn btn-outline-secondary ms-2" %>
+      </div>
+    <% end %>
+  </div>
+</div>
