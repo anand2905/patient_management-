@@ -4,13 +4,13 @@ A Ruby on Rails application for managing patient records and appointments.
 
 ## Prerequisites
 
-- Ruby 3.2.2
+- Ruby 3.3.4
 - Rails 8.0.1
 - Postgres
 
 ## Setup
 
-1. Clone the repository
+1. Clone the repository (git clone https://github.com/anand2905/patient_management-.git)
 2. Install dependencies:
 ```bash
 bundle install
@@ -39,6 +39,12 @@ rails server
 
 The application will be available at `http://localhost:3000`
 
+6. Default Admin creds:
+```bash
+ email: 'admin@example.com',
+ password: 'password123',
+```
+
 ## Features
 
 - View all patients with pagination (10 patients per page)
@@ -54,4 +60,3 @@ The application will be available at `http://localhost:3000`
 - Uses Kaminari for pagination
 - Uses validates_email_format_of for email validation
 - Includes RSpec tests with FactoryBot and Faker
-- Simple and clean UI focusing on functionality
