@@ -38,8 +38,13 @@ class PatientsController < ApplicationController
   end
 
   def destroy
-    @patient.destroy
+    if @patient.destroy
+      redirect_to patients_path, notice: "Patient was successfully deleted."
+    else
+      redirect_to patients_path, alert: "Failed to delete the patient."
+    end
   end
+
 
   private
 

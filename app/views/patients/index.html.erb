@@ -53,6 +53,9 @@
                 <%= link_to edit_patient_path(patient), class: "btn btn-sm btn-outline-primary" do %>
                   <i class="bi bi-pencil"></i> Edit
                 <% end %>
+                <%= link_to patient_path(patient), data: { turbo_method: :delete, confirm: 'Are you sure?' }, class: "btn btn-sm btn-outline-danger" do %>
+                  <i class="bi bi-trash"></i> Delete
+                <% end %>
               </td>
             </tr>
           <% end %>
